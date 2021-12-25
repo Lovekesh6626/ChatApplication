@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ChatApplication.Account>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FullName)
+    </td>
+    <td>
+        <a href="/Home/Message?id=@item.id">Go to Chat</a>
+    </td>
+
+</tr>
+}
+
+</table>
